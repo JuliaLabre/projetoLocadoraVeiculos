@@ -1,0 +1,202 @@
+[
+    {
+      "id": 1,
+      "tipo": "carro",
+      "marca": "Chevrolet",
+      "modelo": "Onix",
+      "ano": 2022,
+      "placa": "ABC1D23"
+    },
+    {
+      "id": 2,
+      "tipo": "moto",
+      "marca": "Honda",
+      "modelo": "CB 500",
+      "ano": 2021,
+      "placa": "DEF4G56"
+    },
+    {
+      "id": 3,
+      "tipo": "carro",
+      "marca": "Ford",
+      "modelo": "Ka",
+      "ano": 2020,
+      "placa": "GHI7J89"
+    },
+    {
+      "id": 4,
+      "tipo": "moto",
+      "marca": "Yamaha",
+      "modelo": "MT-07",
+      "ano": 2023,
+      "placa": "JKL1M23"
+    },
+    {
+      "id": 5,
+      "tipo": "carro",
+      "marca": "Volkswagen",
+      "modelo": "Golf",
+      "ano": 2019,
+      "placa": "NOP4Q56"
+    },
+    {
+      "id": 6,
+      "tipo": "moto",
+      "marca": "Suzuki",
+      "modelo": "GSX-R750",
+      "ano": 2022,
+      "placa": "RST7U89"
+    },
+    {
+      "id": 7,
+      "tipo": "carro",
+      "marca": "Fiat",
+      "modelo": "Palio",
+      "ano": 2021,
+      "placa": "VWX1Y23"
+    },
+    {
+      "id": 8,
+      "tipo": "moto",
+      "marca": "Kawasaki",
+      "modelo": "Ninja 400",
+      "ano": 2020,
+      "placa": "ZAB2C34"
+    },
+    {
+      "id": 9,
+      "tipo": "carro",
+      "marca": "Hyundai",
+      "modelo": "HB20",
+      "ano": 2018,
+      "placa": "DEF5G67"
+    },
+    {
+      "id": 10,
+      "tipo": "moto",
+      "marca": "Ducati",
+      "modelo": "Panigale V4",
+      "ano": 2023,
+      "placa": "HIJ8K90"
+    },
+    {
+      "id": 11,
+      "tipo": "carro",
+      "marca": "Toyota",
+      "modelo": "Corolla",
+      "ano": 2022,
+      "placa": "LMN1O23"
+    },
+    {
+      "id": 12,
+      "tipo": "moto",
+      "marca": "Harley-Davidson",
+      "modelo": "Street Glide",
+      "ano": 2021,
+      "placa": "PQR2S34"
+    },
+    {
+      "id": 13,
+      "tipo": "carro",
+      "marca": "Renault",
+      "modelo": "Clio",
+      "ano": 2020,
+      "placa": "TUV3W56"
+    },
+    {
+      "id": 14,
+      "tipo": "moto",
+      "marca": "BMW",
+      "modelo": "S1000RR",
+      "ano": 2019,
+      "placa": "XYZ4A56"
+    },
+    {
+      "id": 15,
+      "tipo": "carro",
+      "marca": "Nissan",
+      "modelo": "March",
+      "ano": 2023,
+      "placa": "BCD1E23"
+    },
+    {
+      "id": 16,
+      "tipo": "moto",
+      "marca": "Aprilia",
+      "modelo": "Tuono V4",
+      "ano": 2022,
+      "placa": "EFG2H34"
+    },
+    {
+      "id": 17,
+      "tipo": "carro",
+      "marca": "Jeep",
+      "modelo": "Renegade",
+      "ano": 2021,
+      "placa": "IJK3L56"
+    },
+    {
+      "id": 18,
+      "tipo": "moto",
+      "marca": "Moto Guzzi",
+      "modelo": "V85 TT",
+      "ano": 2020,
+      "placa": "MNO4P67"
+    },
+    {
+      "id": 19,
+      "tipo": "carro",
+      "marca": "Peugeot",
+      "modelo": "208",
+      "ano": 2019,
+      "placa": "PQR5S89"
+    },
+    {
+      "id": 20,
+      "tipo": "moto",
+      "marca": "Triumph",
+      "modelo": "Street Triple",
+      "ano": 2022,
+      "placa": "STU6V90"
+    },
+    {
+      "id": 21,
+      "tipo": "carro",
+      "marca": "Citroen",
+      "modelo": "C3",
+      "ano": 2018,
+      "placa": "VWX7Y01"
+    },
+    {
+      "id": 22,
+      "tipo": "moto",
+      "marca": "KTM",
+      "modelo": "Duke 390",
+      "ano": 2021,
+      "placa": "YZA1B23"
+    },
+    {
+      "id": 23,
+      "tipo": "carro",
+      "marca": "Audi",
+      "modelo": "A3",
+      "ano": 2020,
+      "placa": "BCD2E34"
+    },
+    {
+      "id": 24,
+      "tipo": "moto",
+      "marca": "Dafra",
+      "modelo": "Apache 200",
+      "ano": 2019,
+      "placa": "EFG3H45"
+    },
+    {
+      "id": 25,
+      "tipo": "carro",
+      "marca": "Mercedes-Benz",
+      "modelo": "CLA",
+      "ano": 2023,
+      "placa": "HIJ4K56"
+    }
+  ]
