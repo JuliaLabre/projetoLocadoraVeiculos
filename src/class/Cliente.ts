@@ -5,7 +5,7 @@ export class Cliente {
   private nome: string;
   private cpf: string;
   private carteiraHabilitacao: string;
-  private veiculoAlugado: Veiculo | null;
+  private veiculoAlugado: boolean;
 
   constructor(
     id: number,
@@ -17,7 +17,7 @@ export class Cliente {
     this.nome = nome;
     this.cpf = cpf;
     this.carteiraHabilitacao = carteiraHabilitacao;
-    this.veiculoAlugado = null;
+    this.veiculoAlugado = false;
   }
 
   get getCpf(): string {
@@ -28,11 +28,11 @@ export class Cliente {
     return this.carteiraHabilitacao;
   }
 
-  get getVeiculoAlugado(): Veiculo | null {
+  get getVeiculoAlugado(): boolean {
     return this.veiculoAlugado;
   }
 
-  set setVeiculoAlugado(veiculo: Veiculo | null) {
-    this.veiculoAlugado = veiculo;
+  set setVeiculoAlugado(status: boolean) {
+    this.veiculoAlugado = status;
   }
 }

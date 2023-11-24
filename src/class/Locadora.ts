@@ -45,10 +45,15 @@ class Locadora {
   alugarVeiculo(nome: string, cpf: string, dias: number): void {
     const cliente = Object.values(this.clientes)
       .flat()
-      .find((pessoa: any) => pessoa.cpf.replace(/[^\d]/g, "") === cpf);
+      .find(
+        (pessoa: any) =>
+          pessoa.cpf.replace(/[^\d]/g, "") === cpf && pessoa.nome === nome
+      );
 
     if (cliente) {
-      if (!cliente.getVeiculoAlugado) {
+      const possuiVeiculoAlugado = cliente.getVeiculoAlugado;
+      console.log(possuiVeiculoAlugado);
+      if (!possuiVeiculoAlugado) {
         const tipoVeiculo =
           cliente.getCarteiraHabilitacao === "A" ? "moto" : "carro";
 
@@ -57,12 +62,17 @@ class Locadora {
         );
 
         if (veiculoDisponivel) {
-          veiculoDisponivel.setAlugado = true;
-          cliente.setVeiculoAlugado = veiculoDisponivel;
-          const locacao = new Locacao(cliente, veiculoDisponivel, dias);
+          const veiculoParaAluguel = Object.values(veiculoDisponivel).find(
+            (veiculo) => veiculo.alugado === false
+          );
+          veiculoParaAluguel.alugado = true;
+          const locacao = new Locacao(cliente, veiculoParaAluguel, dias);
+
           this.locacoes.push(locacao);
+          cliente.setVeiculoAlugado = true;
+          console.log(this.locacoes);
           console.log(
-            `${nome} alugou um ${tipoVeiculo} com placa ${veiculoDisponivel.getPlaca}.`
+            `${nome} alugou um ${tipoVeiculo} com placa ${veiculoParaAluguel.placa}.`
           );
           console.log(
             `Valor do aluguel: R$${locacao.calcularValor().toFixed(2)}`

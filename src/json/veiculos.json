@@ -2,7 +2,7 @@
   "veiculos": [
     {
       "id": 1,
-      "alugado": false,
+      "alugado": true,
       "tipo": "carro",
       "marca": "Chevrolet",
       "modelo": "Onix",
@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "alugado": false,
+      "alugado": true,
       "tipo": "moto",
       "marca": "Honda",
       "modelo": "CB 500",
@@ -20,7 +20,7 @@
     },
     {
       "id": 3,
-      "alugado": false,
+      "alugado": true,
       "tipo": "carro",
       "marca": "Ford",
       "modelo": "Ka",
@@ -29,7 +29,7 @@
     },
     {
       "id": 4,
-      "alugado": false,
+      "alugado": true,
       "tipo": "moto",
       "marca": "Yamaha",
       "modelo": "MT-07",
@@ -38,7 +38,7 @@
     },
     {
       "id": 5,
-      "alugado": false,
+      "alugado": true,
       "tipo": "carro",
       "marca": "Volkswagen",
       "modelo": "Golf",
@@ -47,7 +47,7 @@
     },
     {
       "id": 6,
-      "alugado": false,
+      "alugado": true,
       "tipo": "moto",
       "marca": "Suzuki",
       "modelo": "GSX-R750",
