@@ -26,7 +26,7 @@ function executarOpcao(opcao: number): void {
       const habilitacao = prompt(
         "Informe o tipo de habilitação do cliente. A -Moto ou B -Carro :"
       );
-      //locadora.cadastrarCliente(nome, cpf, habilitacao);
+      locadora.cadastrarCliente(nome, cpf, habilitacao);
       break;
     case 2:
       const tipo = prompt(

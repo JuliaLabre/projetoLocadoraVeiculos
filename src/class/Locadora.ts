@@ -4,12 +4,12 @@ import Locacao from "./Locacao";
 import * as fs from "fs";
 class Locadora {
   veiculos: { [placa: string]: Veiculo };
-  clientes: { [cpf: string]: Cliente };
+  clientes: Cliente[];
   locacoes: Locacao[];
 
   constructor() {
     this.veiculos = {};
-    this.clientes = {};
+    this.clientes = [];
     this.locacoes = [];
     this.carregarDadosClientes();
     this.carregarDadosLocacoes();
@@ -18,7 +18,7 @@ class Locadora {
   carregarDadosClientes(): void {
     try {
       const clientesData = fs.readFileSync("./src/json/clientes.json", "utf-8");
-      this.clientes = JSON.parse(clientesData);
+      this.clientes = JSON.parse(clientesData).map(({ id, nome, cpf, habilitacao }) => new Cliente(id, nome, cpf, habilitacao));
     } catch (error) {
       console.log("Erro ao carregar dados:", error.message);
     }
@@ -40,6 +40,27 @@ class Locadora {
     } catch (error) {
       console.log("Erro ao carregar dados:", error.message);
     }
+  }
+
+  cadastrarCliente(nome: string, cpf: string, habilitacao: string): void {
+    if (cpf.length !== 11 || isNaN(Number(cpf))) {
+      return console.log('CPF inválido')
+    }
+    
+    if (!['a', 'b'].includes(habilitacao.toLowerCase())) {
+      return console.log('Habilitação inválida')
+    }
+    
+    const clienteExistente = this.clientes.find((cliente) => cliente.getCpf === cpf)
+    
+    if (clienteExistente) {
+      return console.log('Cliente com este CPF já existe')
+    }
+    
+    const novoId = this.clientes.length + 1
+    const cliente = new Cliente(novoId, nome, cpf, habilitacao)
+    this.clientes.push(cliente)
+    this.salvarDados()
   }
 
   alugarVeiculo(nome: string, cpf: string, dias: number): void {
