@@ -20,6 +20,10 @@ export class Cliente {
     this.veiculoAlugado = null;
   }
 
+  get getCpf(): string {
+    return this.cpf;
+  }
+
   get getCarteiraHabilitacao(): string {
     return this.carteiraHabilitacao;
   }

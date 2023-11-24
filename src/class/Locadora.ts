@@ -24,50 +24,59 @@ class Locadora {
     }
   }
 
+  carregarDadosVeiculos(): void {
+    try {
+      const veiculosData = fs.readFileSync("./src/json/veiculos.json", "utf-8");
+      this.veiculos = JSON.parse(veiculosData);
+    } catch (error) {
+      console.log("Erro ao carregar dados:", error.message);
+    }
+  }
+
   carregarDadosLocacoes(): void {
     try {
       const locacoesData = fs.readFileSync("./src/json/locacoes.json", "utf-8");
       this.locacoes = JSON.parse(locacoesData);
-      console.log(this.locacoes);
     } catch (error) {
       console.log("Erro ao carregar dados:", error.message);
     }
   }
 
   alugarVeiculo(nome: string, cpf: string, dias: number): void {
-    this.carregarDadosClientes();
-    const cliente = this.clientes[cpf];
-    console.log(cliente);
+    const cliente = Object.values(this.clientes)
+      .flat()
+      .find((pessoa: any) => pessoa.cpf.replace(/[^\d]/g, "") === cpf);
 
-    // if (cliente) {
-    //   if (!cliente.getVeiculoAlugado) {
-    //     const tipoVeiculo =
-    //       cliente.getCarteiraHabilitacao === "A" ? "moto" : "carro";
-    //     const veiculoDisponivel = Object.values(this.veiculos).find(
-    //       (veiculo) => !veiculo.getAlugado
-    //     );
+    if (cliente) {
+      if (!cliente.getVeiculoAlugado) {
+        const tipoVeiculo =
+          cliente.getCarteiraHabilitacao === "A" ? "moto" : "carro";
 
-    //     if (veiculoDisponivel) {
-    //       veiculoDisponivel.setAlugado = true;
-    //       cliente.setVeiculoAlugado = veiculoDisponivel;
-    //       const locacao = new Locacao(cliente, veiculoDisponivel, dias);
-    //       this.locacoes.push(locacao);
-    //       console.log(
-    //         `${nome} alugou um ${tipoVeiculo} com placa ${veiculoDisponivel.getPlaca}.`
-    //       );
-    //       console.log(
-    //         `Valor do aluguel: R$${locacao.calcularValor().toFixed(2)}`
-    //       );
-    //       this.salvarDados();
-    //     } else {
-    //       console.log(`Não há ${tipoVeiculo}s disponíveis para aluguel.`);
-    //     }
-    //   } else {
-    //     console.log(`${nome} já está alugando um veículo.`);
-    //   }
-    // } else {
-    //   console.log(`Cliente com CPF ${cpf} não encontrado.`);
-    // }
+        const veiculoDisponivel = Object.values(this.veiculos).find(
+          (veiculo) => !veiculo.getAlugado
+        );
+
+        if (veiculoDisponivel) {
+          veiculoDisponivel.setAlugado = true;
+          cliente.setVeiculoAlugado = veiculoDisponivel;
+          const locacao = new Locacao(cliente, veiculoDisponivel, dias);
+          this.locacoes.push(locacao);
+          console.log(
+            `${nome} alugou um ${tipoVeiculo} com placa ${veiculoDisponivel.getPlaca}.`
+          );
+          console.log(
+            `Valor do aluguel: R$${locacao.calcularValor().toFixed(2)}`
+          );
+          this.salvarDados();
+        } else {
+          console.log(`Não há ${tipoVeiculo}s disponíveis para aluguel.`);
+        }
+      } else {
+        console.log(`${nome} já está alugando um veículo.`);
+      }
+    } else {
+      console.log(`Cliente com CPF ${cpf} não encontrado.`);
+    }
   }
 
   salvarDados(): void {

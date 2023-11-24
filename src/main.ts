@@ -75,6 +75,9 @@ function executarOpcao(opcao: number): void {
 
 while (true) {
   exibirMenu();
+  locadora.carregarDadosClientes();
+  locadora.carregarDadosVeiculos();
+  locadora.carregarDadosLocacoes();
   const opcao = parseInt(prompt("Escolha uma opção: "));
   executarOpcao(opcao);
 }
