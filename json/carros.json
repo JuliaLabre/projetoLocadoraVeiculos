@@ -9,7 +9,7 @@
     "id": 2,
     "tipo": "moto",
     "placa": "DEF4G56",
-    "alugado": true
+    "alugado": false
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "id": 5,
     "tipo": "carro",
     "placa": "NOP4Q56",
-    "alugado": true
+    "alugado": false
   },
   {
     "id": 6,
@@ -39,7 +39,7 @@
     "id": 7,
     "tipo": "carro",
     "placa": "VWX1Y23",
-    "alugado": true
+    "alugado": false
   },
   {
     "id": 8,
@@ -57,7 +57,7 @@
     "id": 10,
     "tipo": "moto",
     "placa": "HIJ8K90",
-    "alugado": true
+    "alugado": false
   },
   {
     "id": 11,
@@ -75,7 +75,7 @@
     "id": 13,
     "tipo": "carro",
     "placa": "TUV3W56",
-    "alugado": true
+    "alugado": false
   },
   {
     "id": 14,
@@ -93,7 +93,7 @@
     "id": 16,
     "tipo": "moto",
     "placa": "EFG2H34",
-    "alugado": true
+    "alugado": false
   },
   {
     "id": 17,
@@ -111,7 +111,7 @@
     "id": 19,
     "tipo": "carro",
     "placa": "PQR5S89",
-    "alugado": true
+    "alugado": false
   },
   {
     "id": 20,
@@ -129,7 +129,7 @@
     "id": 22,
     "tipo": "moto",
     "placa": "YZA1B23",
-    "alugado": true
+    "alugado": false
   },
   {
     "id": 23,
@@ -147,6 +147,6 @@
     "id": 25,
     "tipo": "carro",
     "placa": "HIJ4K56",
-    "alugado": true
+    "alugado": false
   }
 ]
