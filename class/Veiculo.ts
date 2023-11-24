@@ -1,4 +1,4 @@
-class Veiculo {
+export class Veiculo {
     private id:number
     private tipo:string  
     private placa:string
