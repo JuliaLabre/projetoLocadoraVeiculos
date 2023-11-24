@@ -10,7 +10,16 @@ export class Veiculo {
       this.placa = placa;
       this.alugado = alugado;
     }
+    getPlaca():string {
+      return this.placa
+    }
+
+    getTipo():string {
+      return this.tipo
+    }
   }
+
+  
   
   // Exemplo de uso da classe
   const veiculo1 = new Veiculo(1,
