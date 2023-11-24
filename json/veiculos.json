@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "tipo": "carro",
+    "placa": "ABC1D23",
+    "alugado": false
+  },
+  {
+    "id": 2,
+    "tipo": "moto",
+    "placa": "DEF4G56",
+    "alugado": false
+  },
+  {
+    "id": 3,
+    "tipo": "carro",
+    "placa": "GHI7J89",
+    "alugado": false
+  },
+  {
+    "id": 4,
+    "tipo": "moto",
+    "placa": "JKL1M23",
+    "alugado": false
+  },
+  {
+    "id": 5,
+    "tipo": "carro",
+    "placa": "NOP4Q56",
+    "alugado": false
+  },
+  {
+    "id": 6,
+    "tipo": "moto",
+    "placa": "RST7U89",
+    "alugado": false
+  },
+  {
+    "id": 7,
+    "tipo": "carro",
+    "placa": "VWX1Y23",
+    "alugado": false
+  },
+  {
+    "id": 8,
+    "tipo": "moto",
+    "placa": "ZAB2C34",
+    "alugado": false
+  },
+  {
+    "id": 9,
+    "tipo": "carro",
+    "placa": "DEF5G67",
+    "alugado": false
+  },
+  {
+    "id": 10,
+    "tipo": "moto",
+    "placa": "HIJ8K90",
+    "alugado": false
+  },
+  {
+    "id": 11,
+    "tipo": "carro",
+    "placa": "LMN1O23",
+    "alugado": false
+  },
+  {
+    "id": 12,
+    "tipo": "moto",
+    "placa": "PQR2S34",
+    "alugado": false
+  },
+  {
+    "id": 13,
+    "tipo": "carro",
+    "placa": "TUV3W56",
+    "alugado": false
+  },
+  {
+    "id": 14,
+    "tipo": "moto",
+    "placa": "XYZ4A56",
+    "alugado": false
+  },
+  {
+    "id": 15,
+    "tipo": "carro",
+    "placa": "BCD1E23",
+    "alugado": false
+  },
+  {
+    "id": 16,
+    "tipo": "moto",
+    "placa": "EFG2H34",
+    "alugado": false
+  },
+  {
+    "id": 17,
+    "tipo": "carro",
+    "placa": "IJK3L56",
+    "alugado": false
+  },
+  {
+    "id": 18,
+    "tipo": "moto",
+    "placa": "MNO4P67",
+    "alugado": false
+  },
+  {
+    "id": 19,
+    "tipo": "carro",
+    "placa": "PQR5S89",
+    "alugado": false
+  },
+  {
+    "id": 20,
+    "tipo": "moto",
+    "placa": "STU6V90",
+    "alugado": false
+  },
+  {
+    "id": 21,
+    "tipo": "carro",
+    "placa": "VWX7Y01",
+    "alugado": false
+  },
+  {
+    "id": 22,
+    "tipo": "moto",
+    "placa": "YZA1B23",
+    "alugado": false
+  },
+  {
+    "id": 23,
+    "tipo": "carro",
+    "placa": "BCD2E34",
+    "alugado": false
+  },
+  {
+    "id": 24,
+    "tipo": "moto",
+    "placa": "EFG3H45",
+    "alugado": false
+  },
+  {
+    "id": 25,
+    "tipo": "carro",
+    "placa": "HIJ4K56",
+    "alugado": false
+  }
+]
