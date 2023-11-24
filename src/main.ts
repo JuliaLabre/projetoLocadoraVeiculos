@@ -1,4 +1,4 @@
-import promptSync from "prompt-sync";
+import * as promptSync from "prompt-sync";
 const prompt = promptSync();
 
 import { Locadora } from "./class/Locadora";
@@ -26,14 +26,14 @@ function executarOpcao(opcao: number): void {
       const habilitacao = prompt(
         "Informe o tipo de habilitação do cliente. A -Moto ou B -Carro :"
       );
-      locadora.cadastrarCliente(nome, cpf, habilitacao);
+      //locadora.cadastrarCliente(nome, cpf, habilitacao);
       break;
     case 2:
       const tipo = prompt(
         "Informe o tipo do veículo. Digite o numero correspondente, 0 -Carro ou 1 -Moto : "
       );
       const placa = prompt("Informe a placa do veículo: ");
-      locadora.cadastrarVeiculo(tipo, placa);
+      //locadora.cadastrarVeiculo(tipo, placa);
       break;
     case 3:
       const nomeDoClienteAluguel = prompt(
@@ -43,23 +43,23 @@ function executarOpcao(opcao: number): void {
         "Informe o CPF do cliente que deseja alugar um veiculo: "
       );
       const diasAlugar = prompt("Informe a quantidade de dias para aluguel: ");
-      locadora.alugarVeiculo(
-        nomeDoClienteAluguel,
-        cpfDoClienteAluguel,
-        diasAlugar
-      );
+      //locadora.alugarVeiculo(
+      // nomeDoClienteAluguel,
+      // cpfDoClienteAluguel,
+      //  diasAlugar
+      // );
       break;
     case 4:
       const cpfDoClienteDevolução = prompt(
         "Informe o CPF do cliente que deseja devolver um veiculo: "
       );
-      locadora.devolverVeiculo(cpfDoClienteDevolução);
+      //locadora.devolverVeiculo(cpfDoClienteDevolução);
       break;
     case 5:
-      locadora.listarVeiculosDisponiveis();
+      //locadora.listarVeiculosDisponiveis();
       break;
     case 6:
-      locadora.listarVeiculosAlugados();
+      //locadora.listarVeiculosAlugados();
       break;
     case 7:
       console.log("Saindo do sistema de locação");
