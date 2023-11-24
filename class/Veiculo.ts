@@ -1,8 +1,8 @@
 export class Veiculo {
-    private id:number
-    private tipo:string  
-    private placa:string
-    private alugado:boolean
+    protected id:number
+    protected tipo:string  
+    protected placa:string
+    public alugado:boolean
 
     constructor(id:number, tipo:string, placa:string, alugado:boolean) {
       this.id = id;
@@ -10,6 +10,7 @@ export class Veiculo {
       this.placa = placa;
       this.alugado = alugado;
     }
+    
   }
   
   // Exemplo de uso da classe
@@ -19,4 +20,5 @@ export class Veiculo {
   
   console.log(veiculo1);
   console.log(veiculo2);
+  
   
