@@ -1,0 +1,67 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "Maria Silva",
+      "cpf": "12345678901",
+      "carteiraHabilitacao": "A",
+      "VeiculoAlugado": true
+    },
+    {
+      "id": 2,
+      "nome": "João Oliveira",
+      "cpf": "23456789012",
+      "carteiraHabilitacao": "B",
+      "VeiculoAlugado": true
+    },
+    {
+      "id": 3,
+      "nome": "Carlos Pereira",
+      "cpf": "34567890123",
+      "carteiraHabilitacao": "A",
+      "VeiculoAlugado": true
+    },
+    {
+      "id": 4,
+      "nome": "Ana Souza",
+      "cpf": "45678901234",
+      "carteiraHabilitacao": "B"
+    },
+    {
+      "id": 5,
+      "nome": "Lucas Santos",
+      "cpf": "56789012345",
+      "carteiraHabilitacao": "A"
+    },
+    {
+      "id": 6,
+      "nome": "Juliana Lima",
+      "cpf": "67890123456",
+      "carteiraHabilitacao": "B"
+    },
+    {
+      "id": 7,
+      "nome": "Pedro Rocha",
+      "cpf": "78901234567",
+      "carteiraHabilitacao": "A"
+    },
+    {
+      "id": 8,
+      "nome": "Mariana Costa",
+      "cpf": "89012345678",
+      "carteiraHabilitacao": "B"
+    },
+    {
+      "id": 9,
+      "nome": "Fernando Almeida",
+      "cpf": "90123456789",
+      "carteiraHabilitacao": "A"
+    },
+    {
+      "id": 10,
+      "nome": "Camila Martins",
+      "cpf": "01234567890",
+      "carteiraHabilitacao": "B"
+    }
+  ]
+}
