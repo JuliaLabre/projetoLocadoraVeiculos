@@ -16,10 +16,10 @@ export class Locadora {
     this.veiculos = JSON.parse(jsonVeiculos);
   }
 
-  listarVeiculos() {
-    this.carregarVeiculos;
+  /*listarVeiculos() {
+    this.carregarVeiculos();
     console.log(this.veiculos);
-  }
+  }*/
 
   autenticarPlaca(veiculo: Veiculo):boolean {
     const regex = '[A-Z]{3}[0-9][0-9A-Z][0-9]{2}';
@@ -32,10 +32,10 @@ export class Locadora {
   }
 
   autenticarTipo(veiculo: Veiculo):boolean {
-    if (veiculo.getTipo().toUpperCase() === "CARRO" || veiculo.getTipo().toLowerCase() === "MOTO") {
+    if (veiculo.getTipo().toUpperCase() === "CARRO" || veiculo.getTipo().toUpperCase() === "MOTO") {
       return true
     } else {
-      console.log("Tipo inválido");
+      console.log("Tipo de veículo inválido");
       return false;
     }
   }
@@ -50,13 +50,23 @@ export class Locadora {
     return true;
   }
 
-  retornaProximoId():number {
-    return this.veiculos.length+1
+  verificarAusenciaDeIdDuplicado(veiculo: Veiculo):boolean {
+    for (let i = 0; i <= this.veiculos.length; i++) {
+      if (this.veiculos[i].getId() == veiculo.getId()) {
+        console.log("Já existe um veículo com esse id");
+        return false;
+      }
+    }
+    return true;
   }
+
+  /*retornaProximoId():number {
+    return this.veiculos.length+1
+  }*/
 
   cadastrarVeiculo(veiculo:Veiculo) {
     if (this.autenticarPlaca(veiculo) && this.autenticarTipo(veiculo)) {
-      if (this.verificarAusenciaDePlacaDuplicada(veiculo)) {
+      if (this.verificarAusenciaDeIdDuplicado(veiculo) && this.verificarAusenciaDePlacaDuplicada(veiculo)) {
         this.veiculos.push;
       }
     }

@@ -10,6 +10,11 @@ export class Veiculo {
       this.placa = placa;
       this.alugado = alugado;
     }
+
+    getId():number {
+      return this.id
+    }
+
     getPlaca():string {
       return this.placa
     }
