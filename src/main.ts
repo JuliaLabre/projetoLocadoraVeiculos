@@ -33,7 +33,7 @@ function executarOpcao(opcao: number): void {
         "Informe o tipo do veículo. Digite o numero correspondente, 0 -Carro ou 1 -Moto : "
       );
       const placa = prompt("Informe a placa do veículo: ");
-      //locadora.cadastrarVeiculo(tipo, placa);
+      locadora.cadastrarVeiculo(tipo, placa);
       break;
     case 3:
       const nomeDoClienteAluguel = prompt(

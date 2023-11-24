@@ -11,6 +11,14 @@ export class Veiculo {
     this.alugado = alugado;
   }
 
+  get getIdVeiculo():number {
+    return this.id
+  }
+
+  get getTipo():string {
+    return this.tipo
+  }
+
   get getAlugado(): boolean {
     return this.alugado;
   }
