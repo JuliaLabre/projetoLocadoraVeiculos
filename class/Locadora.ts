@@ -9,11 +9,10 @@ export class Locadora {
 
 
     static listarVeiculosAlugados(){
-        const content = fs.readFileSync('./veiculos.json', 'utf-8');
+        const content = fs.readFileSync('./json./veiculos.json', 'utf-8');
         const veiculosTotais = JSON.parse(content);
         return veiculosTotais
-        // const alugados = veiculosTotais.map(isAlugado)();
-        // return alugados;
+    
     }
 }
 
