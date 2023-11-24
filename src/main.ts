@@ -1,5 +1,4 @@
 import * as promptSync from "prompt-sync";
-import Locacao from "./class/Locacao";
 import Locadora from "./class/Locadora";
 const prompt = promptSync();
 
@@ -53,21 +52,20 @@ function executarOpcao(opcao: number): void {
       );
       break;
     case 4:
-      const cpfDoClienteDevolução = prompt(
+      const cpfDoClienteDevolucao = prompt(
         "Informe o CPF do cliente que deseja devolver um veiculo: "
       );
-      //locadora.devolverVeiculo(cpfDoClienteDevolução);
+      locadora.devolverVeiculo(cpfDoClienteDevolucao);
       break;
     case 5:
-      //locadora.listarVeiculosDisponiveis();
+      locadora.listarVeiculosDisponiveis();
       break;
     case 6:
-      //locadora.listarVeiculosAlugados();
+      locadora.listarVeiculosAlugados();
       break;
     case 7:
       console.log("Saindo do sistema de locação");
       process.exit(0);
-      break;
     default:
       console.log("Opção inválida.");
   }

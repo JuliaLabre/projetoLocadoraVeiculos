@@ -80,7 +80,7 @@ class Locadora {
         if (veiculoDisponivel) {
           veiculoDisponivel.setAlugado = true;
           cliente.setVeiculoAlugado = veiculoDisponivel;
-          const locacao = new Locacao(cliente, veiculoDisponivel, dias);
+          const locacao = new Locacao(cliente, veiculoDisponivel, dias, false);
           this.locacoes.push(locacao);
           console.log(
             `${nome} alugou um ${tipoVeiculo} com placa ${veiculoDisponivel.getPlaca}.`
@@ -159,9 +159,43 @@ class Locadora {
     if (this.autenticarPlaca(veiculo) && this.autenticarTipo(veiculo)) {
       if (this.verificarAusenciaDeIdDuplicado(veiculo) && this.verificarAusenciaDePlacaDuplicada(veiculo)) {
         this.veiculos.push;
+        this.salvarDados()
       }
     }
   }
+
+  listarVeiculosDisponiveis(): Veiculo[] {
+    return this.veiculos.filter((veiculo) => !veiculo.getAlugado)
+  }
+
+  listarVeiculosAlugados(): Veiculo[] {
+    return this.veiculos.filter((veiculo) => veiculo.getAlugado)
+  }
+
+  devolverVeiculo(cpfDoClienteDevolucao): void {
+
+    //finaliza a locacao
+    const indexLocacao = Object.values(this.locacoes)
+      .flat()
+      .findIndex((locacao: any) => locacao.cliente.cpf.replace(/[^\d]/g, "") === cpfDoClienteDevolucao && !locacao.locacaoFinalizada);
+    
+    this.locacoes[indexLocacao].finalizaLocacao()
+    
+    //liberar o cliente
+    var index = Object.values(this.clientes)
+      .flat()
+      .findIndex((pessoa: any) => pessoa.cpf.replace(/[^\d]/g, "") === cpfDoClienteDevolucao);
+    
+    this.clientes[index].setVeiculoAlugado = null
+
+    //liberar o veiculo
+    index = Object.values(this.veiculos)
+    .flat()
+    .findIndex((veiculo: any) => veiculo.placa === this.locacoes[indexLocacao].getVeiculo.getPlaca);
+  
+    this.veiculos[index].setAlugado = false
+  }
+
 }
 
 export default Locadora;
