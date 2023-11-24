@@ -3,12 +3,12 @@ import { Veiculo } from "./Veiculo";
 import Locacao from "./Locacao";
 import * as fs from "fs";
 class Locadora {
-  veiculos: { [placa: string]: Veiculo };
+  veiculos: Veiculo[];
   clientes: { [cpf: string]: Cliente };
   locacoes: Locacao[];
 
   constructor() {
-    this.veiculos = {};
+    this.veiculos = [];
     this.clientes = {};
     this.locacoes = [];
     this.carregarDadosClientes();
@@ -90,6 +90,55 @@ class Locadora {
       fs.writeFileSync("./src/json/locacoes.json", locacoesData);
     } catch (error) {
       console.log("Erro ao salvar dados:", error.message);
+    }
+  }
+
+  autenticarPlaca(veiculo: Veiculo):boolean {
+    const regex = '[A-Z]{3}[0-9][0-9A-Z][0-9]{2}';
+    if (veiculo.getPlaca.match(regex)) {
+    	return true;
+    } else {
+      console.log('Placa inválida');
+      return false;
+    }
+  }
+
+  autenticarTipo(veiculo: Veiculo):boolean {
+    if (veiculo.getTipo.toUpperCase() === "CARRO" || veiculo.getTipo.toUpperCase() === "MOTO") {
+      return true
+    } else {
+      console.log("Tipo de veículo inválido");
+      return false;
+    }
+  }
+
+  verificarAusenciaDePlacaDuplicada(veiculo: Veiculo):boolean {
+    for (let i = 0; i <= this.veiculos.length; i++) {
+      if (this.veiculos[i].getPlaca.toUpperCase() == veiculo.getPlaca) {
+        console.log("Já existe um veículo com essa placa");
+        return false;
+      }
+    }
+    return true;
+  }
+
+  verificarAusenciaDeIdDuplicado(veiculo: Veiculo):boolean {
+    for (let i = 0; i <= this.veiculos.length; i++) {
+      if (this.veiculos[i].getIdVeiculo == veiculo.getIdVeiculo) {
+        console.log("Já existe um veículo com esse id");
+        return false;
+      }
+    }
+    return true;
+  }
+
+  cadastrarVeiculo(tipo: string, placa: string) {
+    const id = this.veiculos.length + 1
+    const veiculo = new Veiculo(id, tipo, placa, false)
+    if (this.autenticarPlaca(veiculo) && this.autenticarTipo(veiculo)) {
+      if (this.verificarAusenciaDeIdDuplicado(veiculo) && this.verificarAusenciaDePlacaDuplicada(veiculo)) {
+        this.veiculos.push;
+      }
     }
   }
 }
