@@ -1,0 +1,28 @@
+[
+  {
+    "cliente": {
+      "nome": "Maria Silva",
+      "cpf": "12345678901",
+      "carteiraHabilitacao": "A"
+    },
+    "veiculo": {
+      "tipo": "moto",
+      "placa": "DEF4G56",
+      "alugado": true
+    },
+    "periodoLocacao": 5
+  },
+  {
+    "cliente": {
+      "nome": "João Oliveira",
+      "cpf": "23456789012",
+      "carteiraHabilitacao": "B"
+    },
+    "veiculo": {
+      "tipo": "carro",
+      "placa": "ABC1D23",
+      "alugado": true
+    },
+    "periodoLocacao": 3
+  }
+]

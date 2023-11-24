@@ -1,7 +1,7 @@
 import * as promptSync from "prompt-sync";
+import Locacao from "./class/Locacao";
+import Locadora from "./class/Locadora";
 const prompt = promptSync();
-
-import { Locadora } from "./class/Locadora";
 
 const locadora = new Locadora();
 
@@ -42,12 +42,15 @@ function executarOpcao(opcao: number): void {
       const cpfDoClienteAluguel = prompt(
         "Informe o CPF do cliente que deseja alugar um veiculo: "
       );
-      const diasAlugar = prompt("Informe a quantidade de dias para aluguel: ");
-      //locadora.alugarVeiculo(
-      // nomeDoClienteAluguel,
-      // cpfDoClienteAluguel,
-      //  diasAlugar
-      // );
+      const periodoDoAluguel = prompt(
+        "Informe a quantidade de dias para aluguel: "
+      );
+      const periodoFormatado = parseInt(periodoDoAluguel);
+      locadora.alugarVeiculo(
+        nomeDoClienteAluguel,
+        cpfDoClienteAluguel,
+        periodoFormatado
+      );
       break;
     case 4:
       const cpfDoClienteDevolução = prompt(
@@ -68,12 +71,10 @@ function executarOpcao(opcao: number): void {
     default:
       console.log("Opção inválida.");
   }
-}
+} //Loop principal
 
-// Loop principal
 while (true) {
   exibirMenu();
   const opcao = parseInt(prompt("Escolha uma opção: "));
-
   executarOpcao(opcao);
 }
