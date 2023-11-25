@@ -77,11 +77,11 @@ locadora.alugarVeiculo("Eduardo", "74635246378", 5);
 
 //Loop principal
 
-/*while (true) {
+while (true) {
   exibirMenu();
   locadora.carregarDadosClientes();
   locadora.carregarDadosVeiculos();
   locadora.carregarDadosLocacoes();
   const opcao = parseInt(prompt("Escolha uma opção: "));
   executarOpcao(opcao);
-}*/
+}

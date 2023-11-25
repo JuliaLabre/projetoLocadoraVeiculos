@@ -1,4 +1,5 @@
-[
+{
+  "locacoes": [
   {
     "cliente": {
       "nome": "Maria Silva",
@@ -489,3 +490,4 @@
     "periodoLocacao": 3
   }
 ]
+}

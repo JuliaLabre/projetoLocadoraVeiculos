@@ -1,14 +1,17 @@
-[
+{
+  "clientes": [
   {
     "id": 1,
     "nome": "Marcella",
     "cpf": "78787878787",
+    "carteiraHabilitacao": "b",
     "veiculoAlugado": null
   },
   {
     "id": 2,
     "nome": "Victor",
     "cpf": "65628276377",
+    "carteiraHabilitacao": "a",
     "veiculoAlugado": null
   },
   {
@@ -19,3 +22,4 @@
     "veiculoAlugado": null
   }
 ]
+}

@@ -2,6 +2,7 @@ import { Cliente } from "./Cliente";
 import { Veiculo } from "./Veiculo";
 import Locacao from "./Locacao";
 import * as fs from "fs";
+
 class Locadora {
   veiculos: Veiculo[];
   clientes: Cliente[];
@@ -19,7 +20,11 @@ class Locadora {
   carregarDadosClientes(): void {
     try {
       const clientesData = fs.readFileSync("./src/json/clientes.json", "utf-8");
-      this.clientes = JSON.parse(clientesData).map(({ id, nome, cpf, habilitacao }) => new Cliente(id, nome, cpf, habilitacao));
+            
+      let baseClientes:{} = JSON.parse(clientesData);
+      this.clientes = baseClientes['clientes'];
+      this.clientes.map(({ id, nome, cpf, carteiraHabilitacao }) => new Cliente(id, nome, cpf, carteiraHabilitacao));
+      // console.log('Funcionou normal');      
     } catch (error) {
       console.log("Erro ao carregar dados:", error.message);
     }
@@ -28,7 +33,10 @@ class Locadora {
   carregarDadosVeiculos(): void {
     try {
       const veiculosData = fs.readFileSync("./src/json/veiculos.json", "utf-8");
-      this.veiculos = JSON.parse(veiculosData).map(({ id, tipo, placa, alugado }) => new Veiculo(id, tipo, placa, alugado));
+      this.veiculos = JSON.parse(veiculosData);
+      this.veiculos['veiculos'].map(({ id, tipo, placa, alugado }) => new Veiculo(id, tipo, placa, alugado));
+      // console.log('Funcionou normal');
+      
     } catch (error) {
       console.log("Erro ao carregar dados:", error.message);
     }
@@ -37,7 +45,9 @@ class Locadora {
   carregarDadosLocacoes(): void {
     try {
       const locacoesData = fs.readFileSync("./src/json/locacoes.json", "utf-8");
-      this.locacoes = JSON.parse(locacoesData).map(({ cliente, veiculo, periodoLocacao, locacaoFinalizada }) => new Locacao(cliente, veiculo, periodoLocacao, locacaoFinalizada));
+      this.locacoes = JSON.parse(locacoesData);
+      this.locacoes['locacoes'].map(({ cliente, veiculo, periodoLocacao, locacaoFinalizada }) => new Locacao(cliente, veiculo, periodoLocacao, locacaoFinalizada));
+      // console.log('Funcionou normal');
     } catch (error) {
       console.log("Erro ao carregar dados:", error.message);
     }
@@ -198,5 +208,11 @@ class Locadora {
   }
 
 }
+
+
+const locadora = new Locadora();
+
+
+
 
 export default Locadora;
