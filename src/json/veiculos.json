@@ -2,228 +2,153 @@
   "veiculos": [
     {
       "id": 1,
-      "alugado": false,
       "tipo": "carro",
-      "marca": "Chevrolet",
-      "modelo": "Onix",
-      "ano": 2022,
-      "placa": "ABC1D23"
+      "placa": "ABC1D23",
+      "alugado": false
     },
     {
       "id": 2,
-      "alugado": false,
       "tipo": "moto",
-      "marca": "Honda",
-      "modelo": "CB 500",
-      "ano": 2021,
-      "placa": "DEF4G56"
+      "placa": "DEF4G56",
+      "alugado": true
     },
     {
       "id": 3,
-      "alugado": false,
       "tipo": "carro",
-      "marca": "Ford",
-      "modelo": "Ka",
-      "ano": 2020,
-      "placa": "GHI7J89"
+      "placa": "GHI7J89",
+      "alugado": false
     },
     {
       "id": 4,
-      "alugado": false,
       "tipo": "moto",
-      "marca": "Yamaha",
-      "modelo": "MT-07",
-      "ano": 2023,
-      "placa": "JKL1M23"
+      "placa": "JKL1M23",
+      "alugado": false
     },
     {
       "id": 5,
-      "alugado": false,
       "tipo": "carro",
-      "marca": "Volkswagen",
-      "modelo": "Golf",
-      "ano": 2019,
-      "placa": "NOP4Q56"
+      "placa": "NOP4Q56",
+      "alugado": true
     },
     {
       "id": 6,
-      "alugado": false,
       "tipo": "moto",
-      "marca": "Suzuki",
-      "modelo": "GSX-R750",
-      "ano": 2022,
-      "placa": "RST7U89"
+      "placa": "RST7U89",
+      "alugado": false
     },
     {
       "id": 7,
-      "alugado": false,
       "tipo": "carro",
-      "marca": "Fiat",
-      "modelo": "Palio",
-      "ano": 2021,
-      "placa": "VWX1Y23"
+      "placa": "VWX1Y23",
+      "alugado": true
     },
     {
       "id": 8,
-      "alugado": false,
       "tipo": "moto",
-      "marca": "Kawasaki",
-      "modelo": "Ninja 400",
-      "ano": 2020,
-      "placa": "ZAB2C34"
+      "placa": "ZAB2C34",
+      "alugado": false
     },
     {
       "id": 9,
-      "alugado": false,
       "tipo": "carro",
-      "marca": "Hyundai",
-      "modelo": "HB20",
-      "ano": 2018,
-      "placa": "DEF5G67"
+      "placa": "DEF5G67",
+      "alugado": false
     },
     {
       "id": 10,
-      "alugado": false,
       "tipo": "moto",
-      "marca": "Ducati",
-      "modelo": "Panigale V4",
-      "ano": 2023,
-      "placa": "HIJ8K90"
+      "placa": "HIJ8K90",
+      "alugado": true
     },
     {
       "id": 11,
-      "alugado": false,
       "tipo": "carro",
-      "marca": "Toyota",
-      "modelo": "Corolla",
-      "ano": 2022,
-      "placa": "LMN1O23"
+      "placa": "LMN1O23",
+      "alugado": false
     },
     {
       "id": 12,
-      "alugado": false,
       "tipo": "moto",
-      "marca": "Harley-Davidson",
-      "modelo": "Street Glide",
-      "ano": 2021,
-      "placa": "PQR2S34"
+      "placa": "PQR2S34",
+      "alugado": false
     },
     {
       "id": 13,
-      "alugado": false,
       "tipo": "carro",
-      "marca": "Renault",
-      "modelo": "Clio",
-      "ano": 2020,
-      "placa": "TUV3W56"
+      "placa": "TUV3W56",
+      "alugado": true
     },
     {
       "id": 14,
-      "alugado": false,
       "tipo": "moto",
-      "marca": "BMW",
-      "modelo": "S1000RR",
-      "ano": 2019,
-      "placa": "XYZ4A56"
+      "placa": "XYZ4A56",
+      "alugado": false
     },
     {
       "id": 15,
-      "alugado": false,
       "tipo": "carro",
-      "marca": "Nissan",
-      "modelo": "March",
-      "ano": 2023,
-      "placa": "BCD1E23"
+      "placa": "BCD1E23",
+      "alugado": false
     },
     {
       "id": 16,
-      "alugado": false,
       "tipo": "moto",
-      "marca": "Aprilia",
-      "modelo": "Tuono V4",
-      "ano": 2022,
-      "placa": "EFG2H34"
+      "placa": "EFG2H34",
+      "alugado": true
     },
     {
       "id": 17,
-      "alugado": false,
       "tipo": "carro",
-      "marca": "Jeep",
-      "modelo": "Renegade",
-      "ano": 2021,
-      "placa": "IJK3L56"
+      "placa": "IJK3L56",
+      "alugado": false
     },
     {
       "id": 18,
-      "alugado": false,
       "tipo": "moto",
-      "marca": "Moto Guzzi",
-      "modelo": "V85 TT",
-      "ano": 2020,
-      "placa": "MNO4P67"
+      "placa": "MNO4P67",
+      "alugado": false
     },
     {
       "id": 19,
-      "alugado": false,
       "tipo": "carro",
-      "marca": "Peugeot",
-      "modelo": "208",
-      "ano": 2019,
-      "placa": "PQR5S89"
+      "placa": "PQR5S89",
+      "alugado": true
     },
     {
       "id": 20,
-      "alugado": false,
       "tipo": "moto",
-      "marca": "Triumph",
-      "modelo": "Street Triple",
-      "ano": 2022,
-      "placa": "STU6V90"
+      "placa": "STU6V90",
+      "alugado": false
     },
     {
       "id": 21,
-      "alugado": false,
       "tipo": "carro",
-      "marca": "Citroen",
-      "modelo": "C3",
-      "ano": 2018,
-      "placa": "VWX7Y01"
+      "placa": "VWX7Y01",
+      "alugado": false
     },
     {
       "id": 22,
-      "alugado": false,
       "tipo": "moto",
-      "marca": "KTM",
-      "modelo": "Duke 390",
-      "ano": 2021,
-      "placa": "YZA1B23"
+      "placa": "YZA1B23",
+      "alugado": true
     },
     {
       "id": 23,
-      "alugado": false,
       "tipo": "carro",
-      "marca": "Audi",
-      "modelo": "A3",
-      "ano": 2020,
-      "placa": "BCD2E34"
+      "placa": "BCD2E34",
+      "alugado": false
     },
     {
       "id": 24,
-      "alugado": false,
       "tipo": "moto",
-      "marca": "Dafra",
-      "modelo": "Apache 200",
-      "ano": 2019,
-      "placa": "EFG3H45"
+      "placa": "EFG3H45",
+      "alugado": false
     },
     {
       "id": 25,
-      "alugado": false,
       "tipo": "carro",
-      "marca": "Mercedes-Benz",
-      "modelo": "CLA",
-      "ano": 2023,
-      "placa": "HIJ4K56"
+      "placa": "HIJ4K56",
+      "alugado": true
     }
   ]
 }

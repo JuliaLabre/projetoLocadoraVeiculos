@@ -69,13 +69,19 @@ function executarOpcao(opcao: number): void {
     default:
       console.log("Opção inválida.");
   }
-} //Loop principal
+} 
 
-while (true) {
+locadora.listarVeiculosDisponiveis;
+
+locadora.alugarVeiculo("Eduardo", "74635246378", 5);
+
+//Loop principal
+
+/*while (true) {
   exibirMenu();
   locadora.carregarDadosClientes();
   locadora.carregarDadosVeiculos();
   locadora.carregarDadosLocacoes();
   const opcao = parseInt(prompt("Escolha uma opção: "));
   executarOpcao(opcao);
-}
+}*/

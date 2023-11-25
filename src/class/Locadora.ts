@@ -11,6 +11,7 @@ class Locadora {
     this.veiculos = [];
     this.clientes = [];
     this.locacoes = [];
+    this.carregarDadosVeiculos();
     this.carregarDadosClientes();
     this.carregarDadosLocacoes();
   }
@@ -27,7 +28,7 @@ class Locadora {
   carregarDadosVeiculos(): void {
     try {
       const veiculosData = fs.readFileSync("./src/json/veiculos.json", "utf-8");
-      this.veiculos = JSON.parse(veiculosData);
+      this.veiculos = JSON.parse(veiculosData).map(({ id, tipo, placa, alugado }) => new Veiculo(id, tipo, placa, alugado));
     } catch (error) {
       console.log("Erro ao carregar dados:", error.message);
     }
@@ -36,7 +37,7 @@ class Locadora {
   carregarDadosLocacoes(): void {
     try {
       const locacoesData = fs.readFileSync("./src/json/locacoes.json", "utf-8");
-      this.locacoes = JSON.parse(locacoesData);
+      this.locacoes = JSON.parse(locacoesData).map(({ cliente, veiculo, periodoLocacao, locacaoFinalizada }) => new Locacao(cliente, veiculo, periodoLocacao, locacaoFinalizada));
     } catch (error) {
       console.log("Erro ao carregar dados:", error.message);
     }
@@ -64,23 +65,23 @@ class Locadora {
   }
 
   alugarVeiculo(nome: string, cpf: string, dias: number): void {
-    const cliente = Object.values(this.clientes)
-      .flat()
-      .find((pessoa: any) => pessoa.cpf.replace(/[^\d]/g, "") === cpf);
-
+      const cliente = this.clientes.find((cliente)=>cliente.getCpf===cpf);
     if (cliente) {
       if (!cliente.getVeiculoAlugado) {
         const tipoVeiculo =
-          cliente.getCarteiraHabilitacao === "A" ? "moto" : "carro";
-
-        const veiculoDisponivel = Object.values(this.veiculos).find(
-          (veiculo) => !veiculo.getAlugado
+          cliente.getCarteiraHabilitacao === "a" ? "moto" : "carro";
+        console.log(this.veiculos[0].getAlugado);
+        const veiculoDisponivel = this.veiculos.find(
+          (veiculo) => !veiculo.getAlugado && veiculo.getTipo === tipoVeiculo
         );
-
+        console.log("imprima isso");
+        console.log(veiculoDisponivel);
+      
         if (veiculoDisponivel) {
           veiculoDisponivel.setAlugado = true;
           cliente.setVeiculoAlugado = veiculoDisponivel;
           const locacao = new Locacao(cliente, veiculoDisponivel, dias, false);
+          console.log(locacao);
           this.locacoes.push(locacao);
           console.log(
             `${nome} alugou um ${tipoVeiculo} com placa ${veiculoDisponivel.getPlaca}.`

@@ -31,10 +31,3 @@ export class Veiculo {
     return this.placa;
   }
 }
-
-// Exemplo de uso da classe
-const veiculo1 = new Veiculo(1, "carro", "ABC1D23", false);
-const veiculo2 = new Veiculo(2, "moto", "DEF4G56", false);
-
-console.log(veiculo1);
-console.log(veiculo2);
