@@ -1,25 +1,6 @@
 {
   "clientes": [
-  {
-    "id": 1,
-    "nome": "Marcella",
-    "cpf": "78787878787",
-    "carteiraHabilitacao": "b",
-    "veiculoAlugado": null
-  },
-  {
-    "id": 2,
-    "nome": "Victor",
-    "cpf": "65628276377",
-    "carteiraHabilitacao": "a",
-    "veiculoAlugado": null
-  },
-  {
-    "id": 3,
-    "nome": "Eduardo",
-    "cpf": "74635246378",
-    "carteiraHabilitacao": "b",
-    "veiculoAlugado": null
-  }
-]
+    {"id": 1, "nome": "Cliente1", "cpf": "12345678901", "carteiraHabilitacao": "a"},
+    {"id": 2, "nome": "Cliente2", "cpf": "23456789012", "carteiraHabilitacao": "b"}
+  ]
 }

@@ -20,38 +20,48 @@ class Locadora {
   carregarDadosClientes(): void {
     try {
       const clientesData = fs.readFileSync("./src/json/clientes.json", "utf-8");
-            
-      let baseClientes:{} = JSON.parse(clientesData);
-      this.clientes = baseClientes['clientes'];
-      this.clientes.map(({ id, nome, cpf, carteiraHabilitacao }) => new Cliente(id, nome, cpf, carteiraHabilitacao));
-      // console.log('Funcionou normal');      
+      const baseClientes: { clientes: Cliente[] } = JSON.parse(clientesData);
+      
+      if (baseClientes && baseClientes.clientes && Array.isArray(baseClientes.clientes)) {
+        this.clientes = baseClientes.clientes.map(({ id, nome, cpf, carteiraHabilitacao }) =>
+          new Cliente(id, nome, cpf, carteiraHabilitacao)
+        );
+      }
     } catch (error) {
       console.log("Erro ao carregar dados:", error.message);
     }
   }
-
   carregarDadosVeiculos(): void {
     try {
       const veiculosData = fs.readFileSync("./src/json/veiculos.json", "utf-8");
-      this.veiculos = JSON.parse(veiculosData);
-      this.veiculos['veiculos'].map(({ id, tipo, placa, alugado }) => new Veiculo(id, tipo, placa, alugado));
-      // console.log('Funcionou normal');
-      
+      const baseVeiculos: { veiculos: Veiculo[] } = JSON.parse(veiculosData);
+  
+      if (baseVeiculos && baseVeiculos.veiculos && Array.isArray(baseVeiculos.veiculos)) {
+        this.veiculos = baseVeiculos.veiculos.map(({ id, tipo, placa, alugado }) =>
+          new Veiculo(id, tipo, placa, alugado)
+        );
+      }
     } catch (error) {
       console.log("Erro ao carregar dados:", error.message);
     }
   }
-
+  
   carregarDadosLocacoes(): void {
     try {
       const locacoesData = fs.readFileSync("./src/json/locacoes.json", "utf-8");
-      this.locacoes = JSON.parse(locacoesData);
-      this.locacoes['locacoes'].map(({ cliente, veiculo, periodoLocacao, locacaoFinalizada }) => new Locacao(cliente, veiculo, periodoLocacao, locacaoFinalizada));
-      // console.log('Funcionou normal');
+      const baseLocacoes: { locacoes: Locacao[] } = JSON.parse(locacoesData);
+  
+      if (baseLocacoes && baseLocacoes.locacoes && Array.isArray(baseLocacoes.locacoes)) {
+        this.locacoes = baseLocacoes.locacoes.map(({ cliente, veiculo, periodoLocacao, locacaoFinalizada }) =>
+          new Locacao(cliente, veiculo, periodoLocacao, locacaoFinalizada)
+        );
+      }
     } catch (error) {
       console.log("Erro ao carregar dados:", error.message);
     }
   }
+  
+
 
   cadastrarCliente(nome: string, cpf: string, habilitacao: string): void {
     if (cpf.length !== 11 || isNaN(Number(cpf))) {
@@ -82,7 +92,7 @@ class Locadora {
           cliente.getCarteiraHabilitacao === "a" ? "moto" : "carro";
         console.log(this.veiculos[0].getAlugado);
         const veiculoDisponivel = this.veiculos.find(
-          (veiculo) => !veiculo.getAlugado && veiculo.getTipo === tipoVeiculo
+          (veiculo) => !veiculo.getAlugado&& veiculo.getTipo === tipoVeiculo
         );
         console.log("imprima isso");
         console.log(veiculoDisponivel);
@@ -164,26 +174,27 @@ class Locadora {
     return true;
   }
 
-  cadastrarVeiculo(tipo: string, placa: string) {
-    const id = this.veiculos.length + 1
-    const veiculo = new Veiculo(id, tipo, placa, false)
+  cadastrarVeiculo(tipo: string, placa: string): void {
+    const id = this.veiculos.length + 1;
+    const veiculo = new Veiculo(id, tipo, placa, false);
+
     if (this.autenticarPlaca(veiculo) && this.autenticarTipo(veiculo)) {
       if (this.verificarAusenciaDeIdDuplicado(veiculo) && this.verificarAusenciaDePlacaDuplicada(veiculo)) {
-        this.veiculos.push;
-        this.salvarDados()
+        this.veiculos.push(veiculo); // Corrigir o método de push
+        this.salvarDados();
       }
     }
   }
 
   listarVeiculosDisponiveis(): Veiculo[] {
-    return this.veiculos.filter((veiculo) => !veiculo.getAlugado)
+    return this.veiculos.filter((veiculo) => !veiculo.getAlugado) || [];
   }
 
   listarVeiculosAlugados(): Veiculo[] {
     return this.veiculos.filter((veiculo) => veiculo.getAlugado)
   }
 
-  devolverVeiculo(cpfDoClienteDevolucao): void {
+  devolverVeiculo(cpfDoClienteDevolucao:string): void {
 
     //finaliza a locacao
     const indexLocacao = Object.values(this.locacoes)

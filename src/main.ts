@@ -71,10 +71,6 @@ function executarOpcao(opcao: number): void {
   }
 } 
 
-locadora.listarVeiculosDisponiveis;
-
-locadora.alugarVeiculo("Eduardo", "74635246378", 5);
-
 //Loop principal
 
 while (true) {
